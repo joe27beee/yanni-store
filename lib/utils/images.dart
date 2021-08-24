@@ -1,3 +1,4 @@
+//? Categories images
 const home_page_image = 'assets/images/org.jpg';
 const cards_image1 = 'assets/images/1.jpg';
 const cards_image2 = 'assets/images/2.jpg';
@@ -18,3 +19,5 @@ const trumbate_image = 'assets/images/trumbate.jpg';
 const ukulele_image = 'assets/images/ukulele.jpg';
 const drums_image = 'assets/images/drums.jpg';
 const violin_image = 'assets/images/violin.jpg';
+//? Splash screen logo
+const splash_logo = 'assets/logo/logo.png';

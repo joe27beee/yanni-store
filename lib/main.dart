@@ -6,6 +6,7 @@ import 'package:yanni_store/categories/classic_guitar.dart';
 import 'package:yanni_store/categories/electric_guitar.dart';
 import 'package:yanni_store/categories/trumpet.dart';
 import 'package:yanni_store/main/main_page.dart';
+import 'package:yanni_store/splash_screen/splash_screen.dart';
 import 'categories/banjo.dart';
 import 'categories/cello.dart';
 import 'categories/clarinet.dart';
@@ -26,8 +27,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        home: MainPage(),
+    return GetMaterialApp(themeMode: ThemeMode.dark,
+        darkTheme: ThemeData.dark(),
+        theme: ThemeData.light(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         getPages: [
           GetPage(name: "/one", page: () => AcousticGuitarPage()),

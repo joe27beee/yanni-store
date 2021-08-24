@@ -21,54 +21,50 @@ class CustomCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(20)),
       elevation: 3,
-      margin: EdgeInsets.only(right: 8, left: 8, bottom: 10, top: 10),
-      child: Container(
-        // width: 140,
-        height: 160,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              image,
-              fit: BoxFit.fill,
-              width: 130,
-              height: 160,
+      margin: EdgeInsets.only(right: 8, left: 8, bottom: 7, top: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            image,
+            fit: BoxFit.fill,
+            width: 130,
+            height: 150,
+          ),
+          // Spacer(),
+          SizedBox(
+            height: 10,
+          ),
+          RatingStar(),
+          Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: Text(
+              category,
+              style: TextStyle(color: Colors.grey, fontSize: 15),
             ),
-            // Spacer(),
-            SizedBox(
-              height: 10,
-            ),RatingStar(),
-            Padding(
-              padding: const EdgeInsets.only(left: 6),
-              child: Text(
-                category,
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 20),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 6),
-              child: Text(
-                title,
-                style: TextStyle(color: Colors.black, fontSize: 17),
-              ),
+          ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(left: 7, bottom: 7),
+            child: Text(
+              "$price \$",
+              style: TextStyle(color: Colors.redAccent[200], fontSize: 20),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                price,
-                style: TextStyle(color: Colors.grey[700], fontSize: 17),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
 
 class CustemCategoryCard extends StatelessWidget {
-  // const CustemCategoryCard({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -95,7 +91,7 @@ class CustemCategoryCard extends StatelessWidget {
                   margin: EdgeInsets.only(left: 18),
                   child: Text(
                     data[index].title,
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
                 Image.asset(
@@ -104,7 +100,6 @@ class CustemCategoryCard extends StatelessWidget {
                   width: 150,
                   height: 120,
                 ),
-                // Spacer(),
               ],
             ),
           ),
@@ -130,44 +125,46 @@ class StoreCustomCard extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusDirectional.circular(10)),
+          borderRadius: BorderRadiusDirectional.circular(20)),
       elevation: 3,
-      margin: EdgeInsets.only(right: 8, left: 8, bottom: 10, top: 10),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            
-            Image.asset(
-              image,
-              fit: BoxFit.fill,
-              width: 200,
-              height: 150,
-            ),Spacer(),
-            RatingStar(),
-            Padding(
-              padding: const EdgeInsets.only(left: 6),
-              child: Text(
-                category,
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
+      margin: EdgeInsets.only(right: 8, left: 8, bottom: 7, top: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            image,
+            fit: BoxFit.fill,
+            // width: 150,
+            height: 155,
+          ),
+          // Spacer(),
+          SizedBox(
+            height: 10,
+          ),
+          RatingStar(),
+          Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: Text(
+              category,
+              style: TextStyle(color: Colors.grey, fontSize: 15),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 6),
-              child: Text(
-                title,
-                style: TextStyle(color: Colors.black, fontSize: 18),
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 20),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 12),
-              child: Text(
-                price,
-                style: TextStyle(color: Colors.grey[700], fontSize: 18),
-              ),
+          ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(left: 7, bottom: 7),
+            child: Text(
+              "$price \$",
+              style: TextStyle(color: Colors.redAccent[200], fontSize: 20),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

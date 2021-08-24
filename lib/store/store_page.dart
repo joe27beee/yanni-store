@@ -4,146 +4,156 @@ import 'package:yanni_store/cards/custom_card.dart';
 import 'package:yanni_store/utils/images.dart';
 import 'package:get/get.dart';
 
-class StorePage extends StatelessWidget {
-  const StorePage({Key? key}) : super(key: key);
+import 'search_bar_controller.dart';
 
+class StorePage extends StatelessWidget {
+  // const StorePage({Key? key}) : super(key: key);
+  final SearchbarController controller = Get.put(SearchbarController());
   @override
   Widget build(BuildContext context) {
-    final _hight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: PopupMenuButton<int>(
-              color: Colors.white,
-              onSelected: (item) => selectedItem(
-                context,
-                item,
-              ),
-              itemBuilder: (context) => [
-                PopupMenuItem(
-                  value: 0,
-                  child: Row(
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.phoneVolume,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Text(
-                        'Contact us',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
-                  ),
+    return GetBuilder<SearchbarController>(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(
+          title: controller.appBarTitle,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PopupMenuButton<int>(
+                // color: Colors.white,
+                onSelected: (item) => selectedItem(
+                  context,
+                  item,
                 ),
-                // PopupMenuItem(
-                //   value: 2,
-                //   child: Row(
-                //     children: [
-                //       FaIcon(
-                //         FontAwesomeIcons.redo,
-                //         color: morrell_color,
-                //       ),
-                //       SizedBox(
-                //         width: 12,
-                //       ),
-                //       Text(
-                //         'Refresh',
-                //         style: TextStyle(fontSize: 16),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                PopupMenuItem(
-                  value: 1,
-                  child: Row(
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.sort,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Text(
-                        'Sort',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: 0,
+                    child: Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.phoneVolume,
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Text(
+                          'Contact us',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
                   ),
-                )
+                  // PopupMenuItem(
+                  //   value: 2,
+                  //   child: Row(
+                  //     children: [
+                  //       FaIcon(
+                  //         FontAwesomeIcons.redo,
+                  //         color: morrell_color,
+                  //       ),
+                  //       SizedBox(
+                  //         width: 12,
+                  //       ),
+                  //       Text(
+                  //         'Refresh',
+                  //         style: TextStyle(fontSize: 16),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  PopupMenuItem(
+                    value: 1,
+                    child: Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.sort,
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Text(
+                          'Sort',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.redAccent[200],
+          elevation: 4.2,
+          centerTitle: true,
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.redAccent[200],
+          child: controller.searchIcon,
+          onPressed: () {
+            controller.searchBarChange();
+          },
+        ),
+        body: ListView(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      print("Filter");
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.sort,
+                          // color: Colors.black,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "Filter",
+                          // style: TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    )),
+                IconButton(
+                    onPressed: () {
+                      print("view changer");
+                    },
+                    icon: Icon(
+                      Icons.view_column,
+                      // color: Colors.black,
+                    ))
               ],
             ),
-          )
-        ],
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.blueGrey,
-        elevation: 4.2,
-        centerTitle: true,
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blueGrey,
-        child: Icon(Icons.search),
-        onPressed: () {},
-      ),
-      body: ListView(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ElevatedButton(
-                  style: ButtonStyle(
-                    elevation: MaterialStateProperty.all(0),
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.transparent),
-                  ),
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.sort,
-                        color: Colors.black,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "Filter",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ],
-                  )),
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.view_column,
-                    color: Colors.black,
-                  ))
-            ],
-          ),
-          GridView.builder(
-              physics: ScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 20,
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 180,
-                  mainAxisExtent: 260,
-                  // childAspectRatio: 3/3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10),
-              itemBuilder: (context, intdex) {
-                return StoreCustomCard(
-                  image: acoustic_guitar_image,
-                  title: 'item1',
-                  price: "10",
-                  category: 'uuuuu',
-                );
-              }),
-        ],
-      ),
-    );
+            GridView.builder(
+                physics: ScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 20,
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 210.0,
+                    mainAxisExtent: 280,
+                    childAspectRatio: 1.2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
+                itemBuilder: (context, intdex) {
+                  return StoreCustomCard(
+                    image: oud_image,
+                    title: 'item1',
+                    price: "10",
+                    category: 'uuuuu',
+                  );
+                }),
+          ],
+        ),
+      );
+    });
   }
 }
 

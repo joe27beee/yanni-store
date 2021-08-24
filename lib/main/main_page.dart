@@ -36,7 +36,7 @@ class MainPage extends StatelessWidget {
             currentIndex: controller.tabIndex,
             items: [
               BottomNavigationBarItem(
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.redAccent[200],
                 icon: Icon(Icons.home_outlined),
                 label: 'Home',
               ),

@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                   margin: EdgeInsets.only(left: 15, top: 10),
                   child: Text(
                     "New",
-                    style: TextStyle(color: Colors.black, fontSize: 22),
+                    style: TextStyle(fontSize: 22),
                   )),
               Container(
                   margin: EdgeInsets.only(left: 15, top: 10),
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         'View all',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.white),
                       )))
             ],
           ),
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                   margin: EdgeInsets.only(left: 15, top: 10),
                   child: Text(
                     "Offers",
-                    style: TextStyle(color: Colors.black, fontSize: 22),
+                    style: TextStyle(fontSize: 22),
                   )),
               Container(
                   margin: EdgeInsets.only(left: 15, top: 10),
@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         'View all',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.white),
                       )))
             ],
           ),
