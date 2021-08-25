@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:yanni_store/home/home_page.dart';
 import 'package:yanni_store/main/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -44,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        color: Color(0xFF9ae79a),
+        color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -52,13 +51,13 @@ class _SplashScreenState extends State<SplashScreen>
               duration: transitionDuration,
               curve: Curves.fastOutSlowIn,
               style: TextStyle(
-                color: Color(0xFF4e954e),
+                color: Colors.deepPurple,
                 fontSize: !expanded ? _bigFontSize : 50,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600,
               ),
               child: Text(
-                "C",
+                "Y",
               ),
             ),
             AnimatedCrossFade(
@@ -83,24 +82,24 @@ class _SplashScreenState extends State<SplashScreen>
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          "HOWTIME",
+          "ANNI STORE",
           style: TextStyle(
-            color: Color(0xFF4e954e),
-            fontSize: 50,
+            color: Colors.deepPurple,
+            fontSize: 25,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
           ),
         ),
         // LottieBuilder.asset(
-        //   'assets/food.json',
+        //   'assets/images/logo/guitar.json',
         //   onLoaded: (composition) {
         //     _lottieAnimation..duration = composition.duration;
         //   },
         //   frameRate: FrameRate.max,
         //   repeat: false,
         //   animate: false,
-        //   height: 100,
-        //   width: 100,
+        //   height: 120,
+        //   width: 120,
         //   controller: _lottieAnimation,
         // )
       ],

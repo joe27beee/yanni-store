@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(themeMode: ThemeMode.dark,
+    return GetMaterialApp(themeMode: ThemeMode.system,
         darkTheme: ThemeData.dark(),
         theme: ThemeData.light(),
         home: SplashScreen(),
