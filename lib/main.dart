@@ -5,8 +5,8 @@ import 'package:yanni_store/categories/acoustic_guitar.dart';
 import 'package:yanni_store/categories/classic_guitar.dart';
 import 'package:yanni_store/categories/electric_guitar.dart';
 import 'package:yanni_store/categories/trumpet.dart';
-import 'package:yanni_store/main/main_page.dart';
 import 'package:yanni_store/splash_screen/splash_screen.dart';
+import 'package:yanni_store/store/search_bar_controller.dart';
 import 'categories/banjo.dart';
 import 'categories/cello.dart';
 import 'categories/clarinet.dart';
@@ -20,6 +20,8 @@ import 'categories/violin.dart';
 
 void main() {
   runApp(MyApp());
+  final SearchbarController controller = Get.put(SearchbarController());
+  controller.getItemsName();
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(themeMode: ThemeMode.system,
+    return GetMaterialApp(
+        themeMode: ThemeMode.light,
         darkTheme: ThemeData.dark(),
         theme: ThemeData.light(),
         home: SplashScreen(),

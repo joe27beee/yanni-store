@@ -150,9 +150,10 @@ class StoreCustomCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 6),
+            padding: const EdgeInsets.only(left: 6, right: 10),
             child: Text(
               title,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(fontSize: 20),
             ),
           ),

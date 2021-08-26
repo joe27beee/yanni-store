@@ -33,6 +33,10 @@ dependencies:
   get: ^4.3.8
   flutter_native_splash: ^1.2.1
   lottie: ^1.1.0
+  dio: ^4.0.0
+  http: ^0.13.3
+  flutter_form_builder: ^6.0.1
+  flutter_svg: ^0.22.0
     
 
 dev_dependencies:

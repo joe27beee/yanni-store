@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yanni_store/cards/card_model.dart';
 import 'package:yanni_store/cards/custom_card.dart';
 import 'package:yanni_store/utils/images.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,6 @@ import 'package:get/get.dart';
 import 'search_bar_controller.dart';
 
 class StorePage extends StatelessWidget {
-  // const StorePage({Key? key}) : super(key: key);
   final SearchbarController controller = Get.put(SearchbarController());
   @override
   Widget build(BuildContext context) {
@@ -82,12 +82,12 @@ class StorePage extends StatelessWidget {
             )
           ],
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.redAccent[200],
+          backgroundColor: Colors.blue[900],
           elevation: 4.2,
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.redAccent[200],
+          backgroundColor: Colors.blue[900],
           child: controller.searchIcon,
           onPressed: () {
             controller.searchBarChange();
@@ -133,20 +133,21 @@ class StorePage extends StatelessWidget {
               ],
             ),
             GridView.builder(
+                addAutomaticKeepAlives: false,
                 physics: ScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: 20,
+                itemCount: 30,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 210.0,
                     mainAxisExtent: 280,
                     childAspectRatio: 1.2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10),
-                itemBuilder: (context, intdex) {
+                itemBuilder: (context, index) {
                   return StoreCustomCard(
                     image: oud_image,
-                    title: 'item1',
-                    price: "10",
+                    title: '${controller.titles[index]}',
+                    price: "${controller.names[index]}",
                     category: 'uuuuu',
                   );
                 }),

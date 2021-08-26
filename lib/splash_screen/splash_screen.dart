@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
               duration: transitionDuration,
               curve: Curves.fastOutSlowIn,
               style: TextStyle(
-                color: Colors.deepPurple,
+                color: Colors.blue[900],
                 fontSize: !expanded ? _bigFontSize : 50,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600,
@@ -84,8 +84,8 @@ class _SplashScreenState extends State<SplashScreen>
         Text(
           "ANNI STORE",
           style: TextStyle(
-            color: Colors.deepPurple,
-            fontSize: 25,
+            color: Colors.blue[900],
+            fontSize: 35,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
           ),

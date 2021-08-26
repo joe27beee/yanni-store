@@ -1,9 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.example.yanni_store">
    <application
+   
         android:label="yanni_store"
         android:icon="@mipmap/ic_launcher">
         <activity
+        
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

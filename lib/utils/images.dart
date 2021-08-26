@@ -21,3 +21,5 @@ const drums_image = 'assets/images/drums.jpg';
 const violin_image = 'assets/images/violin.jpg';
 //? Splash screen logo
 const splash_logo = 'assets/logo/logo.png';
+//? signin image
+const sign_in_image = 'assets/images/signin.svg';
