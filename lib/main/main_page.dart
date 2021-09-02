@@ -24,7 +24,12 @@ class MainPage extends StatelessWidget {
           body: SafeArea(
             child: IndexedStack(
               index: controller.tabIndex,
-              children: [HomePage(), StorePage(), CategoryPage(), SignInPage()],
+              children: [
+                HomePage(),
+                StorePage(),
+                CategoryPage(),
+                SignInPage(),
+              ],
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
