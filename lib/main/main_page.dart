@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yanni_store/accuonts/accuont_page.dart';
+import 'package:yanni_store/accuonts/customer_signin.dart';
 import 'package:yanni_store/accuonts/signin_page.dart';
 import 'package:yanni_store/categories/category_page.dart';
 import 'package:yanni_store/home/home_page.dart';
@@ -28,7 +29,8 @@ class MainPage extends StatelessWidget {
                 HomePage(),
                 StorePage(),
                 CategoryPage(),
-                SignInPage(),
+                // SignInPage(),
+                CustomerSigninPage()
               ],
             ),
           ),

@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yanni_store/accuonts/forgot_password_page.dart';
 import 'package:yanni_store/categories/Tambourine.dart';
 import 'package:yanni_store/categories/acoustic_guitar.dart';
 import 'package:yanni_store/categories/classic_guitar.dart';
@@ -7,6 +9,8 @@ import 'package:yanni_store/categories/electric_guitar.dart';
 import 'package:yanni_store/categories/trumpet.dart';
 import 'package:yanni_store/splash_screen/splash_screen.dart';
 import 'package:yanni_store/store/search_bar_controller.dart';
+import 'accuonts/registration.dart';
+import 'accuonts/signin_page.dart';
 import 'categories/banjo.dart';
 import 'categories/cello.dart';
 import 'categories/clarinet.dart';
@@ -18,14 +22,16 @@ import 'categories/oud.dart';
 import 'categories/saxophone.dart';
 import 'categories/violin.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   final SearchbarController controller = Get.put(SearchbarController());
   controller.getItemsName();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  // const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +56,10 @@ class MyApp extends StatelessWidget {
           GetPage(name: "/twelve", page: () => SaxophonePage()),
           GetPage(name: "/treeteen", page: () => OrganPage()),
           GetPage(name: "/fourteen", page: () => TambourinePage()),
-          GetPage(name: "/fifteen", page: () => TrumpetPage())
+          GetPage(name: "/fifteen", page: () => TrumpetPage()),
+          GetPage(name: "/sixteen", page: () => RegistrationPage()),
+          GetPage(name: "/seventeen", page: () => SignInPage()),
+          GetPage(name: "/forget", page: () => ForgotPasswordPage())
         ]);
   }
 }
