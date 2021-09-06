@@ -29,4 +29,5 @@ const profile_image = 'assets/images/person.jpg';
 const google_icon='assets/images/search.png';
 const facebook_icon='assets/images/facebook.png';
 const twitter_icon='assets/images/twitter.png';
+const admin_image='assets/images/admin.png';
 
