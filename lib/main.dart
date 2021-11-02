@@ -23,6 +23,7 @@ import 'categories/saxophone.dart';
 import 'categories/violin.dart';
 
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   final SearchbarController controller = Get.put(SearchbarController());
