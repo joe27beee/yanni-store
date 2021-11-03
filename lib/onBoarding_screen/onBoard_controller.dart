@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class OnBoardingController extends GetxController {
+class OnBoardingController {
   final onboardingPagesList = [
     PageModel(
       widget: Column(
@@ -13,19 +12,19 @@ class OnBoardingController extends GetxController {
             height: 20,
           ),
           SvgPicture.asset(
-            'assets/images/signin.svg',
+            'assets/images/onBoarding/music.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),
           Spacer(),
           Container(
               width: double.infinity,
-              child: Text('CCTV TOOLS ', style: pageTitleStyle)),
+              child: Text('WELCOME TO YANNI', style: pageTitleStyle)),
           Container(
             margin: EdgeInsets.only(bottom: 20),
             width: double.infinity,
             child: Text(
-              'Calculate the CCTV Storege, Bandwith, And More',
+              'Home of music and playing instruments',
               style: pageInfoStyle,
             ),
           ),
@@ -39,19 +38,19 @@ class OnBoardingController extends GetxController {
             height: 20,
           ),
           SvgPicture.asset(
-            'assets/images/signin.svg',
+            'assets/images/onBoarding/online_shoping.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),
           Spacer(),
           Container(
               width: double.infinity,
-              child: Text('CONTACT US', style: pageTitleStyle)),
+              child: Text('ANYTHING YOU NEED', style: pageTitleStyle)),
           Container(
             margin: EdgeInsets.only(bottom: 20),
             width: double.infinity,
             child: Text(
-              'You can contact us for any Question',
+              'Wide variety of Music instrument ',
               style: pageInfoStyle,
             ),
           ),
@@ -65,19 +64,19 @@ class OnBoardingController extends GetxController {
             height: 20,
           ),
           SvgPicture.asset(
-            'assets/images/signin.svg',
+            'assets/images/onBoarding/delivery.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),
           Spacer(),
           Container(
               width: double.infinity,
-              child: Text('DRI', style: pageTitleStyle)),
+              child: Text('TO YOUR DOORSTEP', style: pageTitleStyle)),
           Container(
             margin: EdgeInsets.only(bottom: 20),
             width: double.infinity,
             child: Text(
-              'Calculate the Appropriate focal length for Detection, Recognition, Identification',
+              'Fast delivery time to your doorstep',
               style: pageInfoStyle,
             ),
           ),

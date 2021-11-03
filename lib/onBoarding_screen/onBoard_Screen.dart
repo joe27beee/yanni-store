@@ -25,7 +25,7 @@ class OnBoarding extends StatelessWidget {
         skipButtonStyle: SkipButtonStyle(),
         proceedButtonStyle: ProceedButtonStyle(proceedButtonRoute: (context) {
           // _storeOnboardInfo();
-          return Get.to(MainPage());
+          return Get.offAll(() => MainPage());
         }),
         pages: onBoardingController.onboardingPagesList,
         indicator: Indicator(

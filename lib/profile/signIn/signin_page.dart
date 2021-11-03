@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:yanni_store/accuonts/registration.dart';
 import 'package:yanni_store/utils/images.dart';
 
 import '../../connection_controller.dart';
@@ -28,7 +26,7 @@ class SignIn extends StatelessWidget {
             children: [
               Container(
                 width: Adaptive.w(100),
-
+                height: Adaptive.h(40),
                 // width: Adaptive.w(50),
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -37,13 +35,12 @@ class SignIn extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(60),
                         bottomRight: Radius.circular(60))),
-                height: Adaptive.h(40),
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(5.0),
                 child: Container(
                     margin: EdgeInsets.only(top: 140, bottom: 10.0),
-                    width: Adaptive.w(70),
+                    width: Adaptive.w(84),
                     height: Adaptive.h(45),
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -68,7 +65,7 @@ class SignIn extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                top: 20, bottom: 10, left: 40, right: 30),
+                                top: 20, bottom: 10, left: 25, right: 25),
                             child: FormBuilderTextField(
                               keyboardType: TextInputType.emailAddress,
                               validator: FormBuilderValidators.compose([
@@ -84,7 +81,7 @@ class SignIn extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                top: 10, bottom: 10, left: 40, right: 30),
+                                top: 10, bottom: 10, left: 25, right: 25),
                             child: FormBuilderTextField(
                               keyboardType: TextInputType.visiblePassword,
                               validator: FormBuilderValidators.compose([
@@ -127,7 +124,7 @@ class SignIn extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: Adaptive.h(3),
                           )
                         ],
                       ),
@@ -136,19 +133,19 @@ class SignIn extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30,
+            height: Adaptive.h(4),
           ),
           Container(
               // margin: EdgeInsets.only(top: 140, bottom: 10.0),
-              width: Adaptive.w(50),
+              width: Adaptive.w(60),
               height: Adaptive.h(6),
               decoration: BoxDecoration(
                   boxShadow: [
-                    // BoxShadow(
-                    //   color: Colors.grey,
-                    //   offset: Offset(0.0, 1.0),
-                    //   blurRadius: 6.0,
-                    // ),
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(0.0, 0.7),
+                      blurRadius: 4.0,
+                    ),
                   ],
                   color: Colors.blue[700],
                   borderRadius: BorderRadius.only(
@@ -166,7 +163,7 @@ class SignIn extends StatelessWidget {
                       color: Colors.white,
                     ),
                     SizedBox(
-                      width: 5,
+                      width: Adaptive.w(2),
                     ),
                     Text(
                       'Connect With Facebook',
@@ -177,7 +174,7 @@ class SignIn extends StatelessWidget {
                 ),
               )),
           SizedBox(
-            height: 10,
+            height: Adaptive.h(2),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

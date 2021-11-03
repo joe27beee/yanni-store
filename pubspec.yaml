@@ -47,6 +47,7 @@ dependencies:
   http: ^0.13.3
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.2.0
+  flutter_staggered_grid_view: ^0.4.1
     
 
 dev_dependencies:
@@ -69,6 +70,7 @@ flutter:
     - assets/images/
     - assets/images/logo/
     - assets/images/profile/
+    - assets/images/onBoarding/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
