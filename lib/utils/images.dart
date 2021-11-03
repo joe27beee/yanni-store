@@ -23,11 +23,12 @@ const violin_image = 'assets/images/violin.jpg';
 const splash_logo = 'assets/logo/logo.png';
 //? signin image
 const sign_in_image = 'assets/images/signin.svg';
-const social_signin='assets/images/Mobile login-pana.svg';
+const social_signin = 'assets/images/Mobile login-pana.svg';
 //? Profile image
 const profile_image = 'assets/images/person.jpg';
-const google_icon='assets/images/search.png';
-const facebook_icon='assets/images/facebook.png';
-const twitter_icon='assets/images/twitter.png';
-const admin_image='assets/images/admin.png';
+const profile_bg = 'assets/images/profile/bg.jpg';
 
+const google_icon = 'assets/images/search.png';
+const facebook_icon = 'assets/images/facebook.png';
+const twitter_icon = 'assets/images/twitter.png';
+const admin_image = 'assets/images/admin.png';

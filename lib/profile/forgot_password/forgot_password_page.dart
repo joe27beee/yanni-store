@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:yanni_store/New%20folder/registration/auth_controller.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:yanni_store/profile/registration/auth_controller.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   final AuthController signInController = Get.put(AuthController());

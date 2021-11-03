@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:one/registration/auth_controller.dart';
-import '../connection_controller.dart';
-import '../images.dart';
+import '../../connection_controller.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+
+import 'auth_controller.dart';
 
 class RegistrationPage extends StatelessWidget {
   final AuthController authController = Get.put(AuthController());
@@ -24,10 +24,10 @@ class RegistrationPage extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                SvgPicture.asset(
-                  create_image,
-                  height: 220,
-                ),
+                // SvgPicture.asset(
+                //   create_image,
+                //   height: 220,
+                // ),
                 FormBuilder(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     key: _formKey,

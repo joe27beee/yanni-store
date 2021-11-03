@@ -6,6 +6,7 @@ import 'package:yanni_store/accuonts/customer_signin.dart';
 import 'package:yanni_store/accuonts/signin_page.dart';
 import 'package:yanni_store/categories/category_page.dart';
 import 'package:yanni_store/home/home_page.dart';
+import 'package:yanni_store/profile/signIn/signin_page.dart';
 import 'package:yanni_store/store/store_page.dart';
 import 'botton_nav_bar.dart';
 import 'nav_controller.dart';
@@ -79,12 +80,7 @@ class MainPage extends StatelessWidget {
   }
 
   Widget _body() {
-    List<Widget> pages = [
-      HomePage(),
-      StorePage(),
-      CategoryPage(),
-      CustomerSigninPage()
-    ];
+    List<Widget> pages = [HomePage(), StorePage(), CategoryPage(), SignIn()];
     return IndexedStack(
       index: navController.tabIndex,
       children: pages,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -11,8 +12,8 @@ class OnBoardingController extends GetxController {
           SizedBox(
             height: 20,
           ),
-          Image.asset(
-            'assets/images/onBoarding/1.png',
+          SvgPicture.asset(
+            'assets/images/signin.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),
@@ -37,8 +38,8 @@ class OnBoardingController extends GetxController {
           SizedBox(
             height: 20,
           ),
-          Image.asset(
-            'assets/images/onBoarding/2.png',
+          SvgPicture.asset(
+            'assets/images/signin.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),
@@ -63,8 +64,8 @@ class OnBoardingController extends GetxController {
           SizedBox(
             height: 20,
           ),
-          Image.asset(
-            'assets/images/onBoarding/3.png',
+          SvgPicture.asset(
+            'assets/images/signin.svg',
             height: Adaptive.h(40),
             width: Adaptive.h(50),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onboarding/onboarding.dart';
+import 'package:yanni_store/main/main_page.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
 import 'onBoard_controller.dart';
@@ -24,7 +25,7 @@ class OnBoarding extends StatelessWidget {
         skipButtonStyle: SkipButtonStyle(),
         proceedButtonStyle: ProceedButtonStyle(proceedButtonRoute: (context) {
           // _storeOnboardInfo();
-          return Get.offAllNamed('/signIn');
+          return Get.to(MainPage());
         }),
         pages: onBoardingController.onboardingPagesList,
         indicator: Indicator(
