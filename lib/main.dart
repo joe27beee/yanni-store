@@ -11,7 +11,6 @@ import 'package:yanni_store/categories/trumpet.dart';
 import 'package:yanni_store/splash_screen/splash_screen.dart';
 import 'package:yanni_store/store/search_bar_controller.dart';
 import 'accuonts/registration.dart';
-import 'accuonts/signin_page.dart';
 import 'categories/banjo.dart';
 import 'categories/cello.dart';
 import 'categories/clarinet.dart';
@@ -33,7 +32,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

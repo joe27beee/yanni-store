@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:yanni_store/products_data/firebase_store.dart';
 import 'package:yanni_store/utils/images.dart';
 
 import '../../connection_controller.dart';
@@ -11,6 +12,7 @@ import '../registration/auth_controller.dart';
 
 class SignIn extends StatelessWidget {
   final AuthController authController = Get.put(AuthController());
+  final FirebaseController controller = Get.put(FirebaseController());
   final ConnectivityController connectivityController =
       Get.put(ConnectivityController());
   @override
@@ -18,185 +20,191 @@ class SignIn extends StatelessWidget {
     final _formKey = GlobalKey<FormBuilderState>();
 
     return Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          controller.addItem();
+        }),
         body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            alignment: AlignmentDirectional.topCenter,
+          child: Column(
             children: [
-              Container(
-                width: Adaptive.w(100),
-                height: Adaptive.h(40),
-                // width: Adaptive.w(50),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(profile_bg), fit: BoxFit.fill),
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(60),
-                        bottomRight: Radius.circular(60))),
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(5.0),
-                child: Container(
-                    margin: EdgeInsets.only(top: 140, bottom: 10.0),
-                    width: Adaptive.w(84),
-                    height: Adaptive.h(45),
+              Stack(
+                alignment: AlignmentDirectional.topCenter,
+                children: [
+                  Container(
+                    width: Adaptive.w(100),
+                    height: Adaptive.h(40),
+                    // width: Adaptive.w(50),
                     decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(0.0, 1.0),
-                            blurRadius: 6.0,
-                          ),
-                        ],
-                        color: Colors.white,
+                        image: DecorationImage(
+                            image: AssetImage(profile_bg), fit: BoxFit.fill),
+                        color: Colors.amber,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10))),
-                    child: FormBuilder(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      key: _formKey,
-                      child: ListView(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 20, bottom: 10, left: 25, right: 25),
-                            child: FormBuilderTextField(
-                              keyboardType: TextInputType.emailAddress,
-                              validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(context),
-                                FormBuilderValidators.email(context),
-                                FormBuilderValidators.maxLength(context, 50),
-                              ]),
-                              controller: authController.email,
-                              textInputAction: TextInputAction.next,
-                              name: 'Email',
-                              decoration: InputDecoration(labelText: "Email"),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 10, bottom: 10, left: 25, right: 25),
-                            child: FormBuilderTextField(
-                              keyboardType: TextInputType.visiblePassword,
-                              validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(context),
-                                FormBuilderValidators.minLength(context, 8),
-                                FormBuilderValidators.maxLength(context, 50),
-                              ]),
-                              controller: authController.password,
-                              textInputAction: TextInputAction.done,
-                              name: 'Password',
-                              decoration:
-                                  InputDecoration(labelText: "Password"),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 95),
-                            child: TextButton(
+                            bottomLeft: Radius.circular(60),
+                            bottomRight: Radius.circular(60))),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(5.0),
+                    child: Container(
+                        margin: EdgeInsets.only(top: 140, bottom: 10.0),
+                        width: Adaptive.w(84),
+                        height: Adaptive.h(45),
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(0.0, 1.0),
+                                blurRadius: 6.0,
+                              ),
+                            ],
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10))),
+                        child: FormBuilder(
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          key: _formKey,
+                          child: ListView(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, bottom: 10, left: 25, right: 25),
+                                child: FormBuilderTextField(
+                                  keyboardType: TextInputType.emailAddress,
+                                  validator: FormBuilderValidators.compose([
+                                    FormBuilderValidators.required(context),
+                                    FormBuilderValidators.email(context),
+                                    FormBuilderValidators.maxLength(
+                                        context, 50),
+                                  ]),
+                                  controller: authController.email,
+                                  textInputAction: TextInputAction.next,
+                                  name: 'Email',
+                                  decoration:
+                                      InputDecoration(labelText: "Email"),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10, bottom: 10, left: 25, right: 25),
+                                child: FormBuilderTextField(
+                                  keyboardType: TextInputType.visiblePassword,
+                                  validator: FormBuilderValidators.compose([
+                                    FormBuilderValidators.required(context),
+                                    FormBuilderValidators.minLength(context, 8),
+                                    FormBuilderValidators.maxLength(
+                                        context, 50),
+                                  ]),
+                                  controller: authController.password,
+                                  textInputAction: TextInputAction.done,
+                                  name: 'Password',
+                                  decoration:
+                                      InputDecoration(labelText: "Password"),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 95),
+                                child: TextButton(
+                                    onPressed: () => Get.toNamed("/forget"),
+                                    child: Text(
+                                      "Forgot your password?",
+                                      style: TextStyle(color: Colors.grey[700]),
+                                    )),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              // Spacer(),
+                              Divider(
+                                height: 0,
+                                thickness: 2.5,
+                                color: Colors.redAccent,
+                              ),
+                              TextButton(
                                 onPressed: () => Get.toNamed("/forget"),
                                 child: Text(
-                                  "Forgot your password?",
-                                  style: TextStyle(color: Colors.grey[700]),
-                                )),
+                                  "SIGN IN",
+                                  style: GoogleFonts.lato(
+                                      color: Colors.redAccent,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              SizedBox(
+                                height: Adaptive.h(3),
+                              )
+                            ],
                           ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          // Spacer(),
-                          Divider(
-                            height: 0,
-                            thickness: 2.5,
-                            color: Colors.redAccent,
-                          ),
-                          TextButton(
-                            onPressed: () => Get.toNamed("/forget"),
-                            child: Text(
-                              "SIGN IN",
-                              style: GoogleFonts.lato(
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          SizedBox(
-                            height: Adaptive.h(3),
-                          )
-                        ],
-                      ),
-                    )),
+                        )),
+                  ),
+                ],
               ),
-            ],
-          ),
-          SizedBox(
-            height: Adaptive.h(4),
-          ),
-          Container(
-              // margin: EdgeInsets.only(top: 140, bottom: 10.0),
-              width: Adaptive.w(60),
-              height: Adaptive.h(6),
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0.0, 0.7),
-                      blurRadius: 4.0,
+              SizedBox(
+                height: Adaptive.h(4),
+              ),
+              Container(
+                  // margin: EdgeInsets.only(top: 140, bottom: 10.0),
+                  width: Adaptive.w(60),
+                  height: Adaptive.h(6),
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 0.7),
+                          blurRadius: 4.0,
+                        ),
+                      ],
+                      color: Colors.blue[700],
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(5),
+                          topRight: Radius.circular(5),
+                          bottomLeft: Radius.circular(5),
+                          bottomRight: Radius.circular(5))),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.facebook,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: Adaptive.w(2),
+                        ),
+                        Text(
+                          'Connect With Facebook',
+                          style: GoogleFonts.lato(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                  ],
-                  color: Colors.blue[700],
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5),
-                      topRight: Radius.circular(5),
-                      bottomLeft: Radius.circular(5),
-                      bottomRight: Radius.circular(5))),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FaIcon(
-                      FontAwesomeIcons.facebook,
-                      color: Colors.white,
-                    ),
-                    SizedBox(
-                      width: Adaptive.w(2),
-                    ),
-                    Text(
-                      'Connect With Facebook',
+                  )),
+              SizedBox(
+                height: Adaptive.h(2),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: GoogleFonts.lato(
+                        color: Colors.grey[600], fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Sign up",
                       style: GoogleFonts.lato(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: Colors.grey[800], fontWeight: FontWeight.bold),
                     ),
-                  ],
-                ),
-              )),
-          SizedBox(
-            height: Adaptive.h(2),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Don't have an account?",
-                style: GoogleFonts.lato(
-                    color: Colors.grey[600], fontWeight: FontWeight.bold),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Sign up",
-                  style: GoogleFonts.lato(
-                      color: Colors.grey[800], fontWeight: FontWeight.bold),
-                ),
+                  )
+                ],
               )
             ],
-          )
-        ],
-      ),
-    )
+          ),
+        )
         //   ListView(
         // children: [
         //   SizedBox(

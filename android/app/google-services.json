@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "996191441865",
-    "project_id": "yanni-store-7",
-    "storage_bucket": "yanni-store-7.appspot.com"
+    "project_number": "251511868298",
+    "project_id": "yanni-store",
+    "storage_bucket": "yanni-store.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:996191441865:android:af76814050f5dec77a8e18",
+        "mobilesdk_app_id": "1:251511868298:android:dcb1134f5c499982b31673",
         "android_client_info": {
           "package_name": "com.example.yanni_store"
         }
       },
       "oauth_client": [
         {
-          "client_id": "996191441865-ordvbvv8vmci1r4g776nlv9k9nj9saoq.apps.googleusercontent.com",
+          "client_id": "251511868298-qtuokpsrfu3t71vq6f70rc63ttj88fsd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.yanni_store",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "996191441865-f3snj24alvantobvk5ftqj1jrnn437t0.apps.googleusercontent.com",
+          "client_id": "251511868298-1oei9jn52muaporu4hrska361vom59bq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB9i1g-s5taTKbDi9EqXdmcD4XvaOBIwKM"
+          "current_key": "AIzaSyAqGr702wlNnBTM0LTKWwxuA9yK82o9qQ4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "996191441865-f3snj24alvantobvk5ftqj1jrnn437t0.apps.googleusercontent.com",
+              "client_id": "251511868298-1oei9jn52muaporu4hrska361vom59bq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
